@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8m7uf8xjb9m"]
+
+[ext_resource type="Script" path="res://scripts/game.gd"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("game.gd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1, 1)
+
+[node name="GameArea" type="Node2D" parent="."]
+
+[node name="Player" type="Area2D" parent="GameArea"]
+position = Vector2(400, 300)
+
+[node name="PlayerSprite" type="ColorRect" parent="GameArea/Player"]
+size = Vector2(20, 20)
+color = Color.BLUE
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="GameArea/Player"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 200.0
+offset_bottom = 50.0
+text = "Score: 0"
